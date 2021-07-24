@@ -83,6 +83,10 @@ Sub Stock_Calculations()
                     'Output 0% for the percent change from opening price at the beginning of the year to closing price at the end of the year
                     myworksheet.Cells(newrow, 11).Value = 0
                     myworksheet.Cells(newrow, 11).NumberFormat = "0.00%"
+                ElseIf opening = 0 Then
+                    'Output the Percent Change as if opening price was $0.01 at the beginning of the year
+                    myworksheet.Cells(newrow, 11).Value = (myworksheet.Cells(newrow, 10) / 0.01)
+                    myworksheet.Cells(newrow, 11).NumberFormat = "0.00%"
                 Else
                     'Output the Percent Change from opening price at the beginning of the year to closing price at the end of the year
                     myworksheet.Cells(newrow, 11).Value = (myworksheet.Cells(newrow, 10) / opening)
@@ -132,6 +136,10 @@ Sub Stock_Calculations()
                 If myworksheet.Cells(newrow, 10).Value = 0 Then
                     'Output 0% for the percent change from opening price at the beginning of the year to closing price at the end of the year
                     myworksheet.Cells(newrow, 11).Value = 0
+                    myworksheet.Cells(newrow, 11).NumberFormat = "0.00%"
+                ElseIf opening = 0 Then
+                    'Output the Percent Change as if opening price was $0.01 at the beginning of the year
+                    myworksheet.Cells(newrow, 11).Value = (myworksheet.Cells(newrow, 10) / 0.01)
                     myworksheet.Cells(newrow, 11).NumberFormat = "0.00%"
                 Else
                     'Output the Percent Change from opening price at the beginning of the year to closing price at the end of the year
